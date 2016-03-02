@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <sys/errno.h>
 #include <sys/stat.h>
+#include <sys/uio.h>
 
 int idf::ipc::iDFIPC::listen(const char *node) const
 {
@@ -136,6 +137,84 @@ int idf::ipc::iDFIPC::accept(int sock)
 //    }
     
     return newClient;
+}
+
+#warning [TODO] need to UT
+int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const void* msg, int msg_len)
+{
+    printf("111111");
+    if(sock<0 || header==nullptr || msg==nullptr) return -1;
+    
+    printf("2222");
+    
+    struct iovec iovec[3];
+    bzero(iovec, sizeof(iovec));    //fill zero
+    
+    int totalLen = header_len+msg_len+sizeof(int);
+    
+    iovec[0].iov_base = &totalLen;
+    iovec[0].iov_len = sizeof(totalLen);
+    iovec[1].iov_base = (void*)header;
+    iovec[1].iov_len = header_len;
+    iovec[2].iov_base = (void*)msg;
+    iovec[2].iov_len = msg_len;
+    
+    size_t send_size = -1;
+    while(true)
+    {
+        printf("333");
+#define DIM(x)      (sizeof((x)) / sizeof((x)[0]))
+        send_size = writev(sock, iovec, 3);
+#undef DIM
+        
+        printf("\n send_size=%ld, totalLen=%d", send_size, totalLen);
+        
+        int errcode = errno;
+        
+        if(send_size>0) break;   //maybe successful
+        
+        if(errcode==EINTR) continue;    //it will triggle by int3 or other system trap
+    }
+    
+    size_t actual_size = iovec[0].iov_len+totalLen;
+    if(send_size!=actual_size)
+    {
+        printf("[ERROR] size dose not same ~ ");
+        return -1;
+    }
+    
+    return 0;
+}
+
+#warning [TODO] need to UT
+int idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)
+{
+    struct iovec vect_header;
+    
+    //1. read header
+    size_t size;
+    while (1)
+    {
+    size = readv(sock, &vect_header, 1);
+    if(size!=sizeof(struct iovec))
+    {
+        printf("failed, size is %ld", size);
+    }
+    else break;
+    }
+    
+    printf("size is %d", *(int*)vect_header.iov_base);  //this is the total size
+    
+    //2. read the last 2 block vector
+    struct iovec vect_block[2];
+    bzero(vect_block, sizeof(vect_block));
+    size = readv(sock, vect_block, 2);
+    if(size!=*(int*)vect_header.iov_base-sizeof(int)) return -1;
+    
+    *msg_len = (int)(size-header_len);
+    
+    
+    return 0;
 }
 
 void idf::ipc::iDFIPC::close(int sock)

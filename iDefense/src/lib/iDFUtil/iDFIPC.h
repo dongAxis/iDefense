@@ -15,6 +15,21 @@ namespace idf
 {
     namespace ipc
     {
+#warning 4 bytes alignment, maybe 8 bytes?
+#pragma pack(4)
+        struct RequestHeader
+        {
+            int cmd;
+            char version[32];
+        };
+        
+        struct ResponseHeader
+        {
+            int cmd;
+            char version[32];
+        };
+#pragma unpack()
+        
         class iDFIPC
         {
         public:
@@ -23,6 +38,7 @@ namespace idf
             int accept(int sock);
             void close(int sock);
             int send(int sock, const void* header, int headerLen, const void* msg, int msgLen);
+            int recv(int sock, void* header, int headerLen, void** msg, int* msgLen);  //header len always same
         };
     }
 }

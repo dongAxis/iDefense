@@ -27,7 +27,15 @@ int main(int argc, const char * argv[]) {
         printf("\nsock=%d\n", sock);
         char buf[1024] = {0};
         strcpy(buf, "client");
-        write(sock, buf, strlen(buf));
+        
+        idf::ipc::RequestHeader header;
+        header.cmd=1;
+        
+        char teststr[] = "hello world";
+//        header.version="";
+        
+        ipc->send(sock, &header, sizeof(header), teststr, sizeof(teststr));
+//        write(sock, buf, strlen(buf));
     }
     else
     {
@@ -40,7 +48,13 @@ int main(int argc, const char * argv[]) {
         
         char buf[1024];
         bzero(buf, 1024);
-        int size = read(sock, buf, sizeof(buf));
+        
+        idf::ipc::RequestHeader header;
+        int len = -1;
+        
+        ipc->recv(sock, &header, sizeof(header), NULL, &len);
+        
+//        int size = read(sock, buf, sizeof(buf));
         
 //        XCTAssert(strcmp(buf, "client")==0, "error");
         printf("\n\n\n%s\n\nEND\n", buf);
