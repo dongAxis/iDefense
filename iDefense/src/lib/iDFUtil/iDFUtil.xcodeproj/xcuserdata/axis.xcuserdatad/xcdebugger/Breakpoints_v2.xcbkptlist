@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/iDFIPC.cpp"
-            timestampString = "478609594.364193"
+            timestampString = "478610977.16457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/iDFIPC.cpp"
-            timestampString = "478609594.364193"
+            timestampString = "478610977.16457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const void* msg, int msg_len)"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,13 +202,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/iDFIPC.cpp"
-            timestampString = "478609749.295301"
+            timestampString = "478610977.16457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testipc/main.cpp"
+            timestampString = "478610726.063485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "main(int argc, const char * argv[])"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

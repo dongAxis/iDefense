@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "iDFIPC.h"
+#include <sys/uio.h>
 
 int main(int argc, const char * argv[]) {
     pid_t pid = fork();
@@ -52,11 +53,12 @@ int main(int argc, const char * argv[]) {
         idf::ipc::RequestHeader header;
         int len = -1;
         
-        ipc->recv(sock, &header, sizeof(header), NULL, &len);
+//        ipc->recv(sock, &header, sizeof(header), NULL, &len);
         
-//        int size = read(sock, buf, sizeof(buf));
+        int size = read(sock, buf, sizeof(buf));
         
 //        XCTAssert(strcmp(buf, "client")==0, "error");
+        struct iovec h = *((struct iovec*)buf);
         printf("\n\n\n%s\n\nEND\n", buf);
         
         while(1) {}

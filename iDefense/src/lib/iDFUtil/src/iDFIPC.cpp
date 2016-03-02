@@ -150,9 +150,11 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
     struct iovec iovec[3];
     bzero(iovec, sizeof(iovec));    //fill zero
     
-    int totalLen = header_len+msg_len+sizeof(int);
+    int totalLen = header_len+msg_len;
     
-    iovec[0].iov_base = &totalLen;
+    printf("header_len=%d, msg_len=%d, total = %d", header_len, msg_len, totalLen);
+    
+    iovec[0].iov_base = (char*)&totalLen;
     iovec[0].iov_len = sizeof(totalLen);
     iovec[1].iov_base = (void*)header;
     iovec[1].iov_len = header_len;
