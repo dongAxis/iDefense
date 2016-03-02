@@ -6,11 +6,46 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CB4A854E1C8687C40075AD64 /* Thread.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB4A854D1C8687C40075AD64 /* Thread.mm */; };
+		CB4A85501C8687C40075AD64 /* libiDFUtil.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8E34F31C86828900A60BAE /* libiDFUtil.dylib */; };
+		CB4A855F1C8691CB0075AD64 /* iDFException.h in Headers */ = {isa = PBXBuildFile; fileRef = CB4A855C1C8691CB0075AD64 /* iDFException.h */; };
+		CB4A85601C8691CB0075AD64 /* iDFLock.h in Headers */ = {isa = PBXBuildFile; fileRef = CB4A855D1C8691CB0075AD64 /* iDFLock.h */; };
+		CB4A85611C8691CB0075AD64 /* iDFThread.h in Headers */ = {isa = PBXBuildFile; fileRef = CB4A855E1C8691CB0075AD64 /* iDFThread.h */; };
+		CB4A85631C86947D0075AD64 /* iDFThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85621C86947D0075AD64 /* iDFThread.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB4A85511C8687C40075AD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB8E34EB1C86828900A60BAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB8E34F21C86828900A60BAE;
+			remoteInfo = iDFUtil;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		CB4A854B1C8687C40075AD64 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4A854D1C8687C40075AD64 /* Thread.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Thread.mm; sourceTree = "<group>"; };
+		CB4A854F1C8687C40075AD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB4A855C1C8691CB0075AD64 /* iDFException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iDFException.h; path = ../../include/util/iDFException.h; sourceTree = "<group>"; };
+		CB4A855D1C8691CB0075AD64 /* iDFLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iDFLock.h; path = ../../include/util/iDFLock.h; sourceTree = "<group>"; };
+		CB4A855E1C8691CB0075AD64 /* iDFThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iDFThread.h; path = ../../include/util/iDFThread.h; sourceTree = "<group>"; };
+		CB4A85621C86947D0075AD64 /* iDFThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFThread.cpp; path = src/iDFThread.cpp; sourceTree = "<group>"; };
+		CB4A85641C86B1D20075AD64 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../../include/util/common.h; sourceTree = "<group>"; };
 		CB8E34F31C86828900A60BAE /* libiDFUtil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libiDFUtil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB4A85481C8687C40075AD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4A85501C8687C40075AD64 /* libiDFUtil.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB8E34F01C86828900A60BAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -21,9 +56,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB4A854C1C8687C40075AD64 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A854D1C8687C40075AD64 /* Thread.mm */,
+				CB4A854F1C8687C40075AD64 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CB4A85561C868B250075AD64 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A85621C86947D0075AD64 /* iDFThread.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		CB4A85571C868B2D0075AD64 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A855C1C8691CB0075AD64 /* iDFException.h */,
+				CB4A855D1C8691CB0075AD64 /* iDFLock.h */,
+				CB4A855E1C8691CB0075AD64 /* iDFThread.h */,
+				CB4A85641C86B1D20075AD64 /* common.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
 		CB8E34EA1C86828900A60BAE = {
 			isa = PBXGroup;
 			children = (
+				CB4A85571C868B2D0075AD64 /* include */,
+				CB4A85561C868B250075AD64 /* src */,
+				CB4A854C1C8687C40075AD64 /* Tests */,
 				CB8E34F41C86828900A60BAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -32,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8E34F31C86828900A60BAE /* libiDFUtil.dylib */,
+				CB4A854B1C8687C40075AD64 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -43,12 +110,33 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4A855F1C8691CB0075AD64 /* iDFException.h in Headers */,
+				CB4A85601C8691CB0075AD64 /* iDFLock.h in Headers */,
+				CB4A85611C8691CB0075AD64 /* iDFThread.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		CB4A854A1C8687C40075AD64 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4A85531C8687C40075AD64 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				CB4A85471C8687C40075AD64 /* Sources */,
+				CB4A85481C8687C40075AD64 /* Frameworks */,
+				CB4A85491C8687C40075AD64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB4A85521C8687C40075AD64 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = CB4A854B1C8687C40075AD64 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CB8E34F21C86828900A60BAE /* iDFUtil */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB8E34F71C86828900A60BAE /* Build configuration list for PBXNativeTarget "iDFUtil" */;
@@ -75,6 +163,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Axis;
 				TargetAttributes = {
+					CB4A854A1C8687C40075AD64 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					CB8E34F21C86828900A60BAE = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -93,21 +184,75 @@
 			projectRoot = "";
 			targets = (
 				CB8E34F21C86828900A60BAE /* iDFUtil */,
+				CB4A854A1C8687C40075AD64 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		CB8E34EF1C86828900A60BAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		CB4A85491C8687C40075AD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB4A85471C8687C40075AD64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4A854E1C8687C40075AD64 /* Thread.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB8E34EF1C86828900A60BAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4A85631C86947D0075AD64 /* iDFThread.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CB4A85521C8687C40075AD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB8E34F21C86828900A60BAE /* iDFUtil */;
+			targetProxy = CB4A85511C8687C40075AD64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CB4A85541C8687C40075AD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/../include/**";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Axis.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB4A85551C8687C40075AD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/../include/**";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Axis.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CB8E34F51C86828900A60BAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -210,6 +355,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB4A85531C8687C40075AD64 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4A85541C8687C40075AD64 /* Debug */,
+				CB4A85551C8687C40075AD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CB8E34EE1C86828900A60BAE /* Build configuration list for PBXProject "iDFUtil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -226,6 +379,7 @@
 				CB8E34F91C86828900A60BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
