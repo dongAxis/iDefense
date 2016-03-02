@@ -14,10 +14,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>testipc.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>CB4A854A1C8687C40075AD64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB4A856E1C86E2CE0075AD64</key>
 		<dict>
 			<key>primary</key>
 			<true/>

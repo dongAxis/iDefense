@@ -12,6 +12,7 @@
 #include <string>
 #include "iDFLock.h"
 #include "iDFThread.h"
+#include "iDFIPC.h"
 
 using namespace idf;
 
@@ -58,8 +59,10 @@ static void* callback(void* arg)
 {
     MutexLock test;
     LockGuard<MutexLock> lock(test);
-    
-    
+}
+
+-(void)testIPC
+{
 }
 
 
