@@ -61,9 +61,5 @@ static void* callback(void* arg)
     LockGuard<MutexLock> lock(test);
 }
 
--(void)testIPC
-{
-}
-
 
 @end

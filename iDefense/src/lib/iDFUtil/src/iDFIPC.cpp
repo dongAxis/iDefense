@@ -116,8 +116,8 @@ int idf::ipc::iDFIPC::accept(int sock)
     int newClient = -1;
     socklen_t len = sizeof(addr);
     
-    while(1)
-    {
+//    while(1)
+//    {
         if((newClient=::accept(sock, (struct sockaddr*)&addr, &len))>0)
         {
             printf("%s=%d", "newClient", newClient);
@@ -126,14 +126,14 @@ int idf::ipc::iDFIPC::accept(int sock)
             {
                 return -1;
             }
-            break;
+//            break;
         }
        else
        {
            printf("errono code is %d", errno);
-           if(errno==EINTR) continue;
+//           if(errno==EINTR) continue;
        }
-    }
+//    }
     
     return newClient;
 }
