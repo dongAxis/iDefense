@@ -60,7 +60,7 @@ int idf::ipc::iDFIPC::listen(const char *node) const
     
     chmod(addr.sun_path, 0x777);
     //5. listen
-    if((ret =::listen(sock, 5))<0)
+    if((ret =::listen(sock, SOMAXCONN))<0)
     {
         printf("sock listen failed");
         ::close(sock);
@@ -142,17 +142,12 @@ int idf::ipc::iDFIPC::accept(int sock)
 #warning [TODO] need to UT
 int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const void* msg, int msg_len)
 {
-    printf("111111");
     if(sock<0 || header==nullptr || msg==nullptr) return -1;
-    
-    printf("2222");
     
     struct iovec iovec[3];
     bzero(iovec, sizeof(iovec));    //fill zero
     
     int totalLen = header_len+msg_len;
-    
-    printf("header_len=%d, msg_len=%d, total = %d", header_len, msg_len, totalLen);
     
     iovec[0].iov_base = (char*)&totalLen;
     iovec[0].iov_len = sizeof(totalLen);
@@ -161,10 +156,13 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
     iovec[2].iov_base = (void*)msg;
     iovec[2].iov_len = msg_len;
     
+    
+    printf("iov_len=%s", iovec[2].iov_base);
+    
     size_t send_size = -1;
     while(true)
     {
-        printf("333");
+        printf("\n333");
 #define DIM(x)      (sizeof((x)) / sizeof((x)[0]))
         send_size = writev(sock, iovec, 3);
 #undef DIM
@@ -175,7 +173,7 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
         
         if(send_size>0) break;   //maybe successful
         
-        if(errcode==EINTR) continue;    //it will triggle by int3 or other system trap
+        if(errcode==EINTR) continue;    //it will be triggled by int3 or other system trap
     }
     
     size_t actual_size = iovec[0].iov_len+totalLen;
@@ -185,37 +183,57 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
         return -1;
     }
     
+    printf("[QUIT now]");
     return 0;
 }
 
 #warning [TODO] need to UT
 int idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)
 {
-    struct iovec vect_header;
+    if(sock<=0 || header==nullptr || msg==NULL || msg_len==NULL) return -1;
     
-    //1. read header
-    size_t size;
-    while (1)
-    {
-    size = readv(sock, &vect_header, 1);
-    if(size!=sizeof(struct iovec))
+    //1. try to read header
+    struct iovec vect_header;
+    int package_header_size=0;
+    //maybe protocol here
+    vect_header.iov_base = &package_header_size;
+    vect_header.iov_len = sizeof(int);
+    
+    size_t size = readv(sock, &vect_header, 1);
+    if(size!=sizeof(int))
     {
         printf("failed, size is %ld", size);
+        return -1;
     }
-    else break;
+    
+    /*
+        if we are here, it means we have read the header successfully.
+        ..
+        2. next, we will caculate the length of message
+     */
+    int total_size = *(int*)vect_header.iov_base;
+    *msg_len = total_size-header_len;
+    *msg = new char[*msg_len];
+    
+    //3. read last two blocks
+    struct iovec vect_blocks[2];
+    
+    vect_blocks[0].iov_base = header;
+    vect_blocks[0].iov_len = header_len;
+    vect_blocks[1].iov_base = *msg;
+    vect_blocks[1].iov_len = *msg_len;
+    
+    size = readv(sock, vect_blocks, 2);
+    printf("[+]size=%ld", size);
+    fflush(stdout);
+    
+    if(size!=total_size)
+    {
+        printf("recv len of data is %ld, but expected size is %d", size, total_size);
+        return -1;
     }
-    
-    printf("size is %d", *(int*)vect_header.iov_base);  //this is the total size
-    
-    //2. read the last 2 block vector
-    struct iovec vect_block[2];
-    bzero(vect_block, sizeof(vect_block));
-    size = readv(sock, vect_block, 2);
-    if(size!=*(int*)vect_header.iov_base-sizeof(int)) return -1;
-    
-    *msg_len = (int)(size-header_len);
-    
-    
+    printf("successfully receive data!");
+ 
     return 0;
 }
 

@@ -16,7 +16,7 @@ namespace idf
     namespace ipc
     {
 #warning 4 bytes alignment, maybe 8 bytes?
-#pragma pack(4)
+//#pragma pack(4)
         struct RequestHeader
         {
             int cmd;
@@ -28,7 +28,7 @@ namespace idf
             int cmd;
             char version[32];
         };
-#pragma unpack()
+//#pragma unpack()
         
         class iDFIPC
         {

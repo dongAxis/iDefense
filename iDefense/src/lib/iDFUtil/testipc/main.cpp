@@ -36,6 +36,8 @@ int main(int argc, const char * argv[]) {
 //        header.version="";
         
         ipc->send(sock, &header, sizeof(header), teststr, sizeof(teststr));
+        
+        printf("quit now");
 //        write(sock, buf, strlen(buf));
     }
     else
@@ -51,17 +53,17 @@ int main(int argc, const char * argv[]) {
         bzero(buf, 1024);
         
         idf::ipc::RequestHeader header;
-        int len = -1;
+        int header_len = sizeof(header);
         
-//        ipc->recv(sock, &header, sizeof(header), NULL, &len);
+        void * ptr=nullptr;
+        int msg_len = 0;
+
+        ipc->recv(sock, &header, header_len, &ptr, &msg_len);
         
-        int size = read(sock, buf, sizeof(buf));
+//        struct iovec h = *((struct iovec*)buf);
+//        printf("\n\n\n %ld  %s\n\nEND\n", size, (char*)test[0].iov_base);
         
-//        XCTAssert(strcmp(buf, "client")==0, "error");
-        struct iovec h = *((struct iovec*)buf);
-        printf("\n\n\n%s\n\nEND\n", buf);
-        
-        while(1) {}
+//        while(1) {}
     }
 
     return 0;
