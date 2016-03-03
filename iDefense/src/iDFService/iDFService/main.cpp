@@ -8,8 +8,15 @@
 
 #include <iostream>
 
+/**
+ *  iDF main function
+ *
+ *  @param argc
+ *  @param argv
+ *
+ *  @return <#return value description#>
+ */
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
     return 0;
 }

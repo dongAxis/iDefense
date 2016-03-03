@@ -77,7 +77,7 @@ namespace idf
             usleep(1000);
         }
         
-        if(error_code!=0) idf::throwf("init mutex in %s of %s, line %d", __FUNCTION__, __FILE__, __LINE__);
+        if(error_code!=0) throwf("init mutex in %s of %s, line %d", __FUNCTION__, __FILE__, __LINE__);
     }
     
     inline MutexLock::~MutexLock()
