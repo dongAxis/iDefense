@@ -15,6 +15,7 @@
 #include <sys/stat.h>
 
 #include "iDFException.h"
+#include "iDFLock.h"
 
 enum LogLevel
 {
@@ -24,18 +25,34 @@ enum LogLevel
     IDF_DEBUG
 };
 
+#warning   我还没想好 怎么设计  先放一放
+#if DEBUG
+
+#define DEBUG_ERROR()
+
+#else
+
+#endif
+
 class iDFLog
 {
 public:
-    iDFLog(std::string path, enum LogLevel level)
-        :log_path(path), log_level(level)
+    iDFLog sharedInstance();
+private:
+    iDFLog();
+    iDFLog(iDFLog& right);
+    iDFLog(enum LogLevel level, std::string config_path)
+        : log_level(level), pid(getpid()), config_path(config_path)
     {
-        
+        idf::LockGuard<idf::MutexLock> Guard(mutex);
     }
     
 private:
+    std::string config_path;
     std::string log_path;
     enum LogLevel log_level;
+    int pid;
+    idf::MutexLock mutex;
 };
 
 #include "Visibility_pop.h"

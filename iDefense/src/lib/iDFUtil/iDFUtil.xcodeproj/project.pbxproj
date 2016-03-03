@@ -27,6 +27,7 @@
 		CB4A857F1C86E2EC0075AD64 /* iDFIPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85691C86CBE00075AD64 /* iDFIPC.cpp */; };
 		CB4A85821C87EF8A0075AD64 /* iDFException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85811C87EF8A0075AD64 /* iDFException.cpp */; };
 		CB4A85831C87F0440075AD64 /* iDFException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85811C87EF8A0075AD64 /* iDFException.cpp */; };
+		CB4A85851C87FF0D0075AD64 /* iDFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		CB4A85711C86E2CE0075AD64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CB4A85801C87ED990075AD64 /* iDFLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iDFLog.h; path = ../../include/util/iDFLog.h; sourceTree = "<group>"; };
 		CB4A85811C87EF8A0075AD64 /* iDFException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFException.cpp; path = src/iDFException.cpp; sourceTree = "<group>"; };
+		CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFLog.cpp; path = src/iDFLog.cpp; sourceTree = "<group>"; };
 		CB8E34F31C86828900A60BAE /* libiDFUtil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libiDFUtil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				CB4A85621C86947D0075AD64 /* iDFThread.cpp */,
 				CB4A85691C86CBE00075AD64 /* iDFIPC.cpp */,
 				CB4A85811C87EF8A0075AD64 /* iDFException.cpp */,
+				CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4A85851C87FF0D0075AD64 /* iDFLog.cpp in Sources */,
 				CB4A85821C87EF8A0075AD64 /* iDFException.cpp in Sources */,
 				CB4A856A1C86CBE00075AD64 /* iDFIPC.cpp in Sources */,
 				CB4A85631C86947D0075AD64 /* iDFThread.cpp in Sources */,
