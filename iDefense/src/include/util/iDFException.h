@@ -9,22 +9,13 @@
 #ifndef iDFException_h
 #define iDFException_h
 
-#include <sys/types.h>
+#include "Visibility_push.h"
 
-namespace idf
-{
-    void throwf(const char *format, ...)
-    {
-        va_list list;
-        char *p=nullptr;
-        
-        va_start(list, format);
-        vasprintf(&p, format, list);
-        va_end(list);
-        
-        const char* t = p;
-        throw t;
-    }
+extern "C" {
+
+    void throwf(const char *format, ...);
 }
+
+#include "Visibility_pop.h"
 
 #endif /* iDFException_h */

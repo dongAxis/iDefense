@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "iDFIPC.h"
+#include "iDFLog.h"
 #include <sys/uio.h>
 
 int main(int argc, const char * argv[]) {
