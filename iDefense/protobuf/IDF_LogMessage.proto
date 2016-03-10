@@ -1,0 +1,7 @@
+package idf;
+
+message LogMessage
+{
+	required int32 debug_level = 1 	[default = 3];
+	required int32 max_size = 2 	[default = 4194304];
+}

@@ -1,0 +1,2 @@
+./iDFService -p 1001 -np 1001 /Users/axis/PycharmProjects/iDefense/iDefense/iDefense/output/lib/libnamingserver.dylib &
+./iDFService -p 1000 -np 1001 /Users/axis/PycharmProjects/iDefense/iDefense/iDefense/output/lib/libTaskManager.dylib &

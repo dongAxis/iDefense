@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "bool idf::convert&lt;std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; &gt;(__CFDictionary const*&amp;, char*, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;&amp;):iDFTypeConvert.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "idf::iDFConfig&lt;idf::MutexLock&gt;::iDFConfig(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):iDFConfig.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "CFTypeID(plist)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "idf::iDFConfig&lt;idf::MutexLock&gt;::save():iDFConfig.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "ofs.is_open()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "bool idf::iDFConfig&lt;idf::MutexLock&gt;::set&lt;idf::LogMessage&gt;(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;&amp;, idf::LogMessage):iDFConfig.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "plist">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "bool idf::convert&lt;int&gt;(int, char*, __CFDictionary*&amp;):iDFTypeConvert.h">
+      </ContextState>
+      <ContextState
+         contextName = "iDFConfig&lt;idf::MutexLock&gt;::iDFConfig(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):iDFConfig.h">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

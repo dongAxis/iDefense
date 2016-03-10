@@ -13,6 +13,7 @@
 #include "iDFLock.h"
 #include "iDFThread.h"
 #include "iDFIPC.h"
+#include "iDFConfig.h"
 
 using namespace idf;
 
@@ -61,5 +62,12 @@ static void* callback(void* arg)
     LockGuard<MutexLock> lock(test);
 }
 
+-(void)testConfig
+{
+    iDFConfig<idf::MutexLock> config("/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/src/lib/iDFUtil/Tests/res/test.plist");
+    std::string group="";
+    std::string obj;
+    config.get(group, obj);
+}
 
 @end

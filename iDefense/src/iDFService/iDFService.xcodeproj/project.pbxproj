@@ -7,10 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB8E34E41C86824000A60BAE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E34E31C86824000A60BAE /* main.cpp */; };
+		CB106DEE1C8FB36A00B74A65 /* iDFWoker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB106DEC1C8FB36A00B74A65 /* iDFWoker.cpp */; };
+		CB106DF61C8FBB7A00B74A65 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB106DF51C8FBB7A00B74A65 /* main.cpp */; };
+		CB106DFD1C8FCA8F00B74A65 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB106DFC1C8FCA8F00B74A65 /* CoreFoundation.framework */; };
+		CB106E001C8FCB7F00B74A65 /* IDF_LogMessage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = CB106DFE1C8FCB7F00B74A65 /* IDF_LogMessage.pb.cc */; };
+		CB106E011C8FCB7F00B74A65 /* IDF_LogMessage.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = CB106DFF1C8FCB7F00B74A65 /* IDF_LogMessage.pb.h */; };
+		CB106E051C8FCBA100B74A65 /* libprotobuf-lite.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB106E021C8FCBA100B74A65 /* libprotobuf-lite.9.dylib */; };
+		CB106E061C8FCBA100B74A65 /* libprotobuf.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB106E031C8FCBA100B74A65 /* libprotobuf.9.dylib */; };
+		CB106E071C8FCBA100B74A65 /* libprotoc.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB106E041C8FCBA100B74A65 /* libprotoc.9.dylib */; };
+		CB106E261C8FCD4A00B74A65 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB106DFC1C8FCA8F00B74A65 /* CoreFoundation.framework */; };
+		CB15C5641C8E923F005A735D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB15C5631C8E923F005A735D /* main.cpp */; };
+		CB15C5831C8EA48F005A735D /* iDFServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB15C5811C8EA48F005A735D /* iDFServer.cpp */; };
+		CB15C5861C8EA5BE005A735D /* iDFPluginMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB15C5841C8EA5BE005A735D /* iDFPluginMgr.cpp */; };
+		CB15C5891C8EA60C005A735D /* iDFPluginWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB15C5871C8EA60C005A735D /* iDFPluginWrapper.cpp */; };
+		CB69CA871C913746006270D7 /* libiDFUtil.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB69CA861C913746006270D7 /* libiDFUtil.dylib */; };
+		CB69CA881C913839006270D7 /* libiDFUtil.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB69CA861C913746006270D7 /* libiDFUtil.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CB106DF11C8FBB7A00B74A65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CB8E34DE1C86824000A60BAE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -23,25 +46,73 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB106DEC1C8FB36A00B74A65 /* iDFWoker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iDFWoker.cpp; sourceTree = "<group>"; };
+		CB106DED1C8FB36A00B74A65 /* iDFWoker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iDFWoker.hpp; sourceTree = "<group>"; };
+		CB106DF31C8FBB7A00B74A65 /* fake_client */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fake_client; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB106DF51C8FBB7A00B74A65 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CB106DFB1C8FBCB300B74A65 /* test_config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test_config.plist; sourceTree = "<group>"; };
+		CB106DFC1C8FCA8F00B74A65 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		CB106DFE1C8FCB7F00B74A65 /* IDF_LogMessage.pb.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = IDF_LogMessage.pb.cc; path = ../../protobuf/IDF_LogMessage.pb.cc; sourceTree = "<group>"; };
+		CB106DFF1C8FCB7F00B74A65 /* IDF_LogMessage.pb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDF_LogMessage.pb.h; path = ../../protobuf/IDF_LogMessage.pb.h; sourceTree = "<group>"; };
+		CB106E021C8FCBA100B74A65 /* libprotobuf-lite.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libprotobuf-lite.9.dylib"; path = "../../3rd_party/protobuf2.6/lib/libprotobuf-lite.9.dylib"; sourceTree = "<group>"; };
+		CB106E031C8FCBA100B74A65 /* libprotobuf.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotobuf.9.dylib; path = ../../3rd_party/protobuf2.6/lib/libprotobuf.9.dylib; sourceTree = "<group>"; };
+		CB106E041C8FCBA100B74A65 /* libprotoc.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprotoc.9.dylib; path = ../../3rd_party/protobuf2.6/lib/libprotoc.9.dylib; sourceTree = "<group>"; };
+		CB15C5631C8E923F005A735D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CB15C5811C8EA48F005A735D /* iDFServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iDFServer.cpp; sourceTree = "<group>"; };
+		CB15C5821C8EA48F005A735D /* iDFServer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iDFServer.hpp; sourceTree = "<group>"; };
+		CB15C5841C8EA5BE005A735D /* iDFPluginMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iDFPluginMgr.cpp; sourceTree = "<group>"; };
+		CB15C5851C8EA5BE005A735D /* iDFPluginMgr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iDFPluginMgr.hpp; sourceTree = "<group>"; };
+		CB15C5871C8EA60C005A735D /* iDFPluginWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iDFPluginWrapper.cpp; sourceTree = "<group>"; };
+		CB15C5881C8EA60C005A735D /* iDFPluginWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iDFPluginWrapper.hpp; sourceTree = "<group>"; };
+		CB69CA861C913746006270D7 /* libiDFUtil.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiDFUtil.dylib; path = ../../output/lib/libiDFUtil.dylib; sourceTree = "<group>"; };
 		CB8E34E01C86824000A60BAE /* iDFService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iDFService; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB8E34E31C86824000A60BAE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB106DF01C8FBB7A00B74A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB69CA871C913746006270D7 /* libiDFUtil.dylib in Frameworks */,
+				CB106DFD1C8FCA8F00B74A65 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB8E34DD1C86824000A60BAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB69CA881C913839006270D7 /* libiDFUtil.dylib in Frameworks */,
+				CB106E261C8FCD4A00B74A65 /* CoreFoundation.framework in Frameworks */,
+				CB106E051C8FCBA100B74A65 /* libprotobuf-lite.9.dylib in Frameworks */,
+				CB106E061C8FCBA100B74A65 /* libprotobuf.9.dylib in Frameworks */,
+				CB106E071C8FCBA100B74A65 /* libprotoc.9.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB106DF41C8FBB7A00B74A65 /* fake_client */ = {
+			isa = PBXGroup;
+			children = (
+				CB106DF51C8FBB7A00B74A65 /* main.cpp */,
+			);
+			path = fake_client;
+			sourceTree = "<group>";
+		};
 		CB8E34D71C86824000A60BAE = {
 			isa = PBXGroup;
 			children = (
+				CB69CA861C913746006270D7 /* libiDFUtil.dylib */,
+				CB106E021C8FCBA100B74A65 /* libprotobuf-lite.9.dylib */,
+				CB106E031C8FCBA100B74A65 /* libprotobuf.9.dylib */,
+				CB106E041C8FCBA100B74A65 /* libprotoc.9.dylib */,
+				CB106DFE1C8FCB7F00B74A65 /* IDF_LogMessage.pb.cc */,
+				CB106DFF1C8FCB7F00B74A65 /* IDF_LogMessage.pb.h */,
+				CB106DFC1C8FCA8F00B74A65 /* CoreFoundation.framework */,
 				CB8E34E21C86824000A60BAE /* iDFService */,
+				CB106DF41C8FBB7A00B74A65 /* fake_client */,
 				CB8E34E11C86824000A60BAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8E34E01C86824000A60BAE /* iDFService */,
+				CB106DF31C8FBB7A00B74A65 /* fake_client */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,7 +129,16 @@
 		CB8E34E21C86824000A60BAE /* iDFService */ = {
 			isa = PBXGroup;
 			children = (
-				CB8E34E31C86824000A60BAE /* main.cpp */,
+				CB15C5631C8E923F005A735D /* main.cpp */,
+				CB15C5811C8EA48F005A735D /* iDFServer.cpp */,
+				CB15C5821C8EA48F005A735D /* iDFServer.hpp */,
+				CB15C5841C8EA5BE005A735D /* iDFPluginMgr.cpp */,
+				CB15C5851C8EA5BE005A735D /* iDFPluginMgr.hpp */,
+				CB15C5871C8EA60C005A735D /* iDFPluginWrapper.cpp */,
+				CB15C5881C8EA60C005A735D /* iDFPluginWrapper.hpp */,
+				CB106DEC1C8FB36A00B74A65 /* iDFWoker.cpp */,
+				CB106DED1C8FB36A00B74A65 /* iDFWoker.hpp */,
+				CB106DFB1C8FBCB300B74A65 /* test_config.plist */,
 			);
 			path = iDFService;
 			sourceTree = "<group>";
@@ -65,6 +146,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB106DF21C8FBB7A00B74A65 /* fake_client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB106DF71C8FBB7A00B74A65 /* Build configuration list for PBXNativeTarget "fake_client" */;
+			buildPhases = (
+				CB106DEF1C8FBB7A00B74A65 /* Sources */,
+				CB106DF01C8FBB7A00B74A65 /* Frameworks */,
+				CB106DF11C8FBB7A00B74A65 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fake_client;
+			productName = fake_client;
+			productReference = CB106DF31C8FBB7A00B74A65 /* fake_client */;
+			productType = "com.apple.product-type.tool";
+		};
 		CB8E34DF1C86824000A60BAE /* iDFService */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB8E34E71C86824000A60BAE /* Build configuration list for PBXNativeTarget "iDFService" */;
@@ -91,6 +189,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Axis;
 				TargetAttributes = {
+					CB106DF21C8FBB7A00B74A65 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					CB8E34DF1C86824000A60BAE = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -109,22 +210,55 @@
 			projectRoot = "";
 			targets = (
 				CB8E34DF1C86824000A60BAE /* iDFService */,
+				CB106DF21C8FBB7A00B74A65 /* fake_client */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB106DEF1C8FBB7A00B74A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB106DF61C8FBB7A00B74A65 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB8E34DC1C86824000A60BAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB8E34E41C86824000A60BAE /* main.cpp in Sources */,
+				CB106E001C8FCB7F00B74A65 /* IDF_LogMessage.pb.cc in Sources */,
+				CB106E011C8FCB7F00B74A65 /* IDF_LogMessage.pb.h in Sources */,
+				CB15C5891C8EA60C005A735D /* iDFPluginWrapper.cpp in Sources */,
+				CB15C5831C8EA48F005A735D /* iDFServer.cpp in Sources */,
+				CB15C5641C8E923F005A735D /* main.cpp in Sources */,
+				CB106DEE1C8FB36A00B74A65 /* iDFWoker.cpp in Sources */,
+				CB15C5861C8EA5BE005A735D /* iDFPluginMgr.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		CB106DF81C8FBB7A00B74A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../include";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../output/lib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB106DF91C8FBB7A00B74A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../include";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../output/lib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CB8E34E51C86824000A60BAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -207,6 +341,14 @@
 		CB8E34E81C86824000A60BAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../include",
+					/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/3rd_party/protobuf2.6/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../output/lib",
+					/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/3rd_party/protobuf2.6/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +356,14 @@
 		CB8E34E91C86824000A60BAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../include",
+					/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/3rd_party/protobuf2.6/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../output/lib",
+					/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/3rd_party/protobuf2.6/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -221,6 +371,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB106DF71C8FBB7A00B74A65 /* Build configuration list for PBXNativeTarget "fake_client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB106DF81C8FBB7A00B74A65 /* Debug */,
+				CB106DF91C8FBB7A00B74A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB8E34DB1C86824000A60BAE /* Build configuration list for PBXProject "iDFService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -237,6 +396,7 @@
 				CB8E34E91C86824000A60BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

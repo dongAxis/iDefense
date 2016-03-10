@@ -187,7 +187,7 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
     return 0;
 }
 
-#warning [TODO] need to UT
+//#warning [TODO] need to UT
 int idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)
 {
     if(sock<=0 || header==nullptr || msg==NULL || msg_len==NULL) return -1;
@@ -232,6 +232,7 @@ int idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, i
         printf("recv len of data is %ld, but expected size is %d", size, total_size);
         return -1;
     }
+    
     printf("successfully receive data!");
  
     return 0;

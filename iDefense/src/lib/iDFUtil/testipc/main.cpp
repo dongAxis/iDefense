@@ -1,3 +1,4 @@
+
 //
 //  main.cpp
 //  testipc
@@ -11,9 +12,24 @@
 #include "iDFLog.h"
 #include "iDFPlugin.h"
 #include <sys/uio.h>
+#include "iDFConfig.h"
+#include "iDFTypeConvert.h"
+#include "iDFLock.h"
+//#include "iDFTypeConvert.h"
 
 int main(int argc, const char * argv[]) {
     pid_t pid = fork();
+    
+//    idf::iDFConfig<idf::MutexLock> config("/Users/axis/PycharmProjects/iDefense/iDefense/iDefense/src/lib/iDFUtil/Tests/res/test.plist");
+//    std::string group="test1";
+//    idf::LogMessage obj;
+//    config.get(group, obj);
+    
+//    obj.set_debug_level(500);
+//    obj.set_max_size(5000);
+//    
+//    config.set(group, obj);
+//    config.save();
     
     if(pid<0)
     {

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "idf::ipc::iDFIPC::send(int, void const*, int, void const*, int):iDFIPC.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "send_size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "iDFServer::get_client_sock() const [inlined]:iDFServer.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "sock_array.empty()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "idf::iDFThread::run():iDFThread.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "IDF_NAMINGSERVICE_ACTION1">
+            </PersistentString>
+            <PersistentString
+               value = "header.cmd">
+            </PersistentString>
+            <PersistentString
+               value = "IDF_NAMINGSERVICE_ACTION2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "iDFWorker::run():iDFWoker.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "cmd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "register_plugin_cb(int, void*, unsigned long long, void**, unsigned long long*):namingServerCallback.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "plugins">
+            </PersistentString>
+            <PersistentString
+               value = "(struct register_data*)in_data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "iDFPluginMgr::get_plugin(int, iDFPluginWrapper**):iDFPluginMgr.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::sendCommand(int, void *, uint64_t, void **, uint64_t *):namingServer.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "handler[i].cmd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "check_plugin_addr_cb(int, void*, unsigned long long, void**, unsigned long long*):namingServerCallback.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "plugins">
+            </PersistentString>
+            <PersistentString
+               value = "ptr">
+            </PersistentString>
+            <PersistentString
+               value = "type_id">
+            </PersistentString>
+            <PersistentString
+               value = "data-&gt;type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "iDFPluginWrapper::iDFPluginWrapper(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):iDFPluginWrapper.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "init_ptr">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "get_all_register_plugin(int, void*, unsigned long long, void**, unsigned long long*):namingServerCallback.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "plugins">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "idf::ipc::iDFIPC::connect(char const*) const:iDFIPC.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "errno">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "registerPlugin(char*, iDFPluginMgr&amp;):main.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
