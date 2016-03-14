@@ -15,6 +15,8 @@
 #include "iDFIPC.h"
 #include "iDFConfig.h"
 
+#include "iDFLog.h"
+
 using namespace idf;
 
 static void* callback(void* arg)
@@ -60,6 +62,8 @@ static void* callback(void* arg)
 {
     MutexLock test;
     LockGuard<MutexLock> lock(test);
+    
+    
 }
 
 -(void)testConfig

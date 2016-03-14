@@ -2,59 +2,59 @@
 //  iDFLog.h
 //  iDFUtil
 //
-//  Created by Axis on 16/3/3.
+//  Created by Axis on 16/3/14.
 //  Copyright © 2016年 Axis. All rights reserved.
 //
 
 #ifndef iDFLog_h
 #define iDFLog_h
-#include "Visibility_push.h"
 
-
-#include <string>
-#include <sys/stat.h>
-
-#include "iDFException.h"
 #include "iDFLock.h"
-
-enum LogLevel
+#include <stdio.h>
+enum iDFLogLevel
 {
-    IDF_ERROR=0,
+    IDF_ERROR,
     IDF_WARNING,
     IDF_INFO,
-    IDF_DEBUG
+    IDF_DEBUG,
 };
 
-#warning   我还没想好 怎么设计  先放一放
+class iDFLogContext;
+extern iDFLogContext *context;
+
 #if DEBUG
 
-#define DEBUG_ERROR()
+#define IDF_ERROR(format, data)    \
+        context->write(IDF_ERROR, (format), data);
+
+#define IDF_WARNING()
+#define IDF_INFO()
+#define IDF_DEBUG()
 
 #else
 
+#define IDF_ERROR()
+#define IDF_WARNING()
+#define IDF_INFO()
+#define IDF_DEBUG()
+
 #endif
 
-class iDFLog
+class iDFLogContext
 {
 public:
-    iDFLog sharedInstance();
+    iDFLogContext(std::string path);
+    ~iDFLogContext();
+    bool isvalid() {return is_invalid;}
+    bool set_debug_level(int level);
+    bool write(int level, char* format, char* data);
 private:
-    iDFLog();
-    iDFLog(iDFLog& right);
-    iDFLog(enum LogLevel level, std::string config_path)
-        : log_level(level), pid(getpid()), config_path(config_path)
-    {
-        idf::LockGuard<idf::MutexLock> Guard(mutex);
-    }
-    
-private:
-    std::string config_path;
-    std::string log_path;
-    enum LogLevel log_level;
-    int pid;
+    bool is_invalid;
+    std::string path;
     idf::MutexLock mutex;
+    int fd;
+    int current_level;
 };
 
-#include "Visibility_pop.h"
 
 #endif /* iDFLog_h */

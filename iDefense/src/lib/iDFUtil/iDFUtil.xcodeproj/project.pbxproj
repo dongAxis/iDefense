@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB0730FE1C8927D5006B9E56 /* iDFLog.h in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85801C87ED990075AD64 /* iDFLog.h */; };
+		CB051BA21C96B6A7008B5200 /* iDFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB051BA01C96B6A7008B5200 /* iDFLog.cpp */; };
+		CB051BA41C96BBE9008B5200 /* iDFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB051BA01C96B6A7008B5200 /* iDFLog.cpp */; };
 		CB0730FF1C8927D5006B9E56 /* iDFPlugin.h in Sources */ = {isa = PBXBuildFile; fileRef = CBB2EF4E1C8801D70073B94D /* iDFPlugin.h */; };
 		CB0731011C8927D5006B9E56 /* iDFConfig.h in Sources */ = {isa = PBXBuildFile; fileRef = CB0730FD1C89274A006B9E56 /* iDFConfig.h */; };
 		CB0731031C8927F2006B9E56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0731021C8927F2006B9E56 /* CoreFoundation.framework */; };
@@ -33,7 +34,6 @@
 		CB4A857F1C86E2EC0075AD64 /* iDFIPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85691C86CBE00075AD64 /* iDFIPC.cpp */; };
 		CB4A85821C87EF8A0075AD64 /* iDFException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85811C87EF8A0075AD64 /* iDFException.cpp */; };
 		CB4A85831C87F0440075AD64 /* iDFException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85811C87EF8A0075AD64 /* iDFException.cpp */; };
-		CB4A85851C87FF0D0075AD64 /* iDFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */; };
 		CBC9D3511C8D2C860087B66F /* IDF_LogMessage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = CBC9D34F1C8D2C860087B66F /* IDF_LogMessage.pb.cc */; };
 		CBC9D3521C8D2C860087B66F /* IDF_LogMessage.pb.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC9D3501C8D2C860087B66F /* IDF_LogMessage.pb.h */; };
 		CBC9D3541C8D361A0087B66F /* IDF_LogMessage.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = CBC9D34F1C8D2C860087B66F /* IDF_LogMessage.pb.cc */; };
@@ -70,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB051B9E1C96B5C9008B5200 /* iDFLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iDFLog.h; path = ../../include/util/iDFLog.h; sourceTree = "<group>"; };
+		CB051BA01C96B6A7008B5200 /* iDFLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFLog.cpp; path = src/iDFLog.cpp; sourceTree = "<group>"; };
 		CB0730FD1C89274A006B9E56 /* iDFConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iDFConfig.h; path = ../../include/util/iDFConfig.h; sourceTree = "<group>"; };
 		CB0731021C8927F2006B9E56 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CB0731051C893331006B9E56 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = test.plist; path = res/test.plist; sourceTree = "<group>"; };
@@ -91,9 +93,7 @@
 		CB4A85691C86CBE00075AD64 /* iDFIPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFIPC.cpp; path = src/iDFIPC.cpp; sourceTree = "<group>"; };
 		CB4A856F1C86E2CE0075AD64 /* testipc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testipc; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4A85711C86E2CE0075AD64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CB4A85801C87ED990075AD64 /* iDFLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iDFLog.h; path = ../../include/util/iDFLog.h; sourceTree = "<group>"; };
 		CB4A85811C87EF8A0075AD64 /* iDFException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFException.cpp; path = src/iDFException.cpp; sourceTree = "<group>"; };
-		CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iDFLog.cpp; path = src/iDFLog.cpp; sourceTree = "<group>"; };
 		CB8E34F31C86828900A60BAE /* libiDFUtil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libiDFUtil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB2EF4E1C8801D70073B94D /* iDFPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iDFPlugin.h; path = ../../include/util/iDFPlugin.h; sourceTree = "<group>"; };
 		CBC9D34F1C8D2C860087B66F /* IDF_LogMessage.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDF_LogMessage.pb.cc; path = ../../../protobuf/IDF_LogMessage.pb.cc; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				CB4A85621C86947D0075AD64 /* iDFThread.cpp */,
 				CB4A85691C86CBE00075AD64 /* iDFIPC.cpp */,
 				CB4A85811C87EF8A0075AD64 /* iDFException.cpp */,
-				CB4A85841C87FF0D0075AD64 /* iDFLog.cpp */,
+				CB051BA01C96B6A7008B5200 /* iDFLog.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -188,11 +188,11 @@
 				CB4A85661C86C69F0075AD64 /* iDFErrorCode.h */,
 				CB4A85671C86C7720075AD64 /* Visibility_push.h */,
 				CB4A85681C86C7840075AD64 /* Visibility_pop.h */,
-				CB4A85801C87ED990075AD64 /* iDFLog.h */,
 				CBB2EF4E1C8801D70073B94D /* iDFPlugin.h */,
 				CB0730FD1C89274A006B9E56 /* iDFConfig.h */,
 				CB0731071C897468006B9E56 /* iDFTypeConvert.h */,
 				CB15C58A1C8EB1B4005A735D /* iDFConfigStatus.h */,
+				CB051B9E1C96B5C9008B5200 /* iDFLog.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -374,9 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB051BA41C96BBE9008B5200 /* iDFLog.cpp in Sources */,
 				CBC9D3541C8D361A0087B66F /* IDF_LogMessage.pb.cc in Sources */,
 				CBC9D3551C8D361A0087B66F /* IDF_LogMessage.pb.h in Sources */,
-				CB0730FE1C8927D5006B9E56 /* iDFLog.h in Sources */,
 				CB0730FF1C8927D5006B9E56 /* iDFPlugin.h in Sources */,
 				CB0731011C8927D5006B9E56 /* iDFConfig.h in Sources */,
 				CB4A85831C87F0440075AD64 /* iDFException.cpp in Sources */,
@@ -397,11 +397,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4A85851C87FF0D0075AD64 /* iDFLog.cpp in Sources */,
 				CB4A85821C87EF8A0075AD64 /* iDFException.cpp in Sources */,
 				CB4A856A1C86CBE00075AD64 /* iDFIPC.cpp in Sources */,
 				CBC9D3511C8D2C860087B66F /* IDF_LogMessage.pb.cc in Sources */,
 				CB4A85631C86947D0075AD64 /* iDFThread.cpp in Sources */,
+				CB051BA21C96B6A7008B5200 /* iDFLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

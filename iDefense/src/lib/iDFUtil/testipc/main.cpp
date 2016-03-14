@@ -15,7 +15,10 @@
 #include "iDFConfig.h"
 #include "iDFTypeConvert.h"
 #include "iDFLock.h"
+#include "iDFLog.h"
 //#include "iDFTypeConvert.h"
+
+class iDFLogContext;
 
 int main(int argc, const char * argv[]) {
     pid_t pid = fork();
@@ -30,6 +33,12 @@ int main(int argc, const char * argv[]) {
 //    
 //    config.set(group, obj);
 //    config.save();
+    
+    iDFLogContext *context=new iDFLogContext(std::string("/Users/axis/log.txt"));
+    
+    IDF_ERROR("%s","testetsetsetnimie2223333");
+    
+    delete context;
     
     if(pid<0)
     {
