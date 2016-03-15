@@ -142,7 +142,7 @@ int idf::ipc::iDFIPC::accept(int sock)
 #warning [TODO] need to UT
 int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const void* msg, int msg_len)
 {
-    if(sock<0 || header==nullptr || msg==nullptr) return -1;
+    if(sock<0 || header==nullptr) return -1;
     
     struct iovec iovec[3];
     bzero(iovec, sizeof(iovec));    //fill zero
@@ -153,8 +153,17 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
     iovec[0].iov_len = sizeof(totalLen);
     iovec[1].iov_base = (void*)header;
     iovec[1].iov_len = header_len;
-    iovec[2].iov_base = (void*)msg;
-    iovec[2].iov_len = msg_len;
+    
+    if(msg!=NULL)
+    {
+        iovec[2].iov_base = (void*)msg;
+        iovec[2].iov_len = msg_len;
+    }
+    else
+    {
+        iovec[2].iov_base = NULL;
+        iovec[2].iov_len = 0;
+    }
     
     
     printf("iov_len=%s", iovec[2].iov_base);
@@ -190,7 +199,7 @@ int idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const v
 //#warning [TODO] need to UT
 int idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)
 {
-    if(sock<=0 || header==nullptr || msg==NULL || msg_len==NULL) return -1;
+    if(sock<=0 || header==nullptr /*|| msg==NULL || msg_len==NULL*/) return -1;
     
     //1. try to read header
     struct iovec vect_header;

@@ -21,6 +21,31 @@
 static std::vector<struct register_data*> plugins;
 static idf::RWLock rw_lock;
 
+IDF_ERRORCODE check_plugin_status(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len)
+{
+    idf::LockGuard<idf::RWLock> guard(rw_lock, /*is_read=*/true);
+    
+    out_data=NULL;
+    *out_len=0;
+    
+    struct check_status *plugin = (struct check_status *)in_data;
+    if(in_data==NULL) return IDF_PLUGIN_NON_EXISTED;
+    
+    std::vector<struct register_data*>::const_iterator begin = plugins.begin();
+    std::vector<struct register_data*>::const_iterator end = plugins.end();
+    
+    if(plugin->type==IDF_PLUGIN_NAMINGSERVICE) return IDF_SUCCESS;
+    
+    for (; begin!=end; begin++)
+    {
+        struct register_data* data = *begin;
+        
+        if(data->type==plugin->type) return IDF_SUCCESS;
+    }
+    
+    return IDF_PLUGIN_NON_EXISTED;
+}
+
 IDF_ERRORCODE get_all_register_plugin(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len)
 {
     idf::LockGuard<idf::RWLock> guard(rw_lock, /*is_read=*/true);
@@ -43,6 +68,7 @@ IDF_ERRORCODE get_all_register_plugin(int cmd, void* in_data, uint64_t in_len, v
     
     if(*out_data==NULL)
         *out_data = new char[strlen(str.c_str())+1];      //create heap
+    
     
 //    strncpy(*out_data, <#const char *#>, <#size_t#>)
     strncpy((char*)(*out_data), str.c_str(), (size_t)strlen(str.c_str()));

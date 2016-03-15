@@ -82,7 +82,7 @@ IDF_ERRORCODE sendCommand(int cmd, void* in_data, uint64_t in_len, void** out_da
         return -1;
     }
     
-    for(int i=0; i<2; i++)
+    for(int i=0; i<4; i++)
     {
         if(handler[i].cmd==cmd)
         {

@@ -65,6 +65,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-p 1001 -np 1001 /Users/axis/PycharmProjects/iDefense/iDefense/iDefense/output/lib/libnamingserver.dylib"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-p 1000 -np 1001 /Users/axis/PycharmProjects/iDefense/iDefense/iDefense/output/lib/libTaskManager.dylib"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

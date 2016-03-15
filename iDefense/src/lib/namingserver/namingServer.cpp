@@ -15,6 +15,7 @@
 #include <util/iDFPlugin.h>
 #include <stdio.h>
 #include <util/iDFCommandSet.h>
+#include <util/iDFLog.h>
 
 #include "namingServer.h"
 #include "namingServerCallback.hpp"
@@ -22,10 +23,14 @@
 //extern std::vector<struct register_data*> plugins;
 //extern idf::RWLock rw_lock;
 
+iDFLogContext *context;
+
 IDF_ERRORCODE initPlugin()
 {
     printf("[+]%s\n", __FUNCTION__);
     fflush(stdout);
+    
+    context = new iDFLogContext("/var/log/iDF/nameserver.log");
     
     return 0;
 }
@@ -36,6 +41,8 @@ IDF_ERRORCODE startPlugin()
     printf("[+]%s\n", __FUNCTION__);
     fflush(stdout);
     
+    IDF_ERROR("%s", "nimei  test log");
+    
     return 0;
 }
 
@@ -43,6 +50,8 @@ IDF_ERRORCODE stopPlugin()
 {
     printf("[+]%s\n", __FUNCTION__);
     fflush(stdout);
+    
+    if(context) delete context;
     
     return 0;
 }
@@ -53,15 +62,15 @@ IDF_ERRORCODE sendCommand(int cmd, void* in_data, uint64_t in_len, void** out_da
     printf("[+]%s\n", __FUNCTION__);
     fflush(stdout);
     
-    for(int i=0; i<4; i++)
+    for(int i=0; i<5; i++)
     {
         if(handler[i].cmd==cmd)
         {
-            (*handler[i].ptr)(cmd, in_data, in_len, out_data, out_len);
+            return (*handler[i].ptr)(cmd, in_data, in_len, out_data, out_len);
         }
     }
     
-    return 0;
+    return IDF_PLUGIN_NON_EXISTED;
 }
 
 PluginTypeID getPluginId()
@@ -90,5 +99,10 @@ Handler handler[] =
         .cmd=IDF_NAMINGSERVICE_GET_ALL_INFO,
         .desc=(char*)"get all plugin desc",
         .ptr = &get_all_register_plugin
+    },
+    {
+        .cmd=IDF_NAMINGSERVICE_CHECK_STATUS,
+        .desc=(char*)"check plugin status",
+        .ptr=check_plugin_status
     }
 };

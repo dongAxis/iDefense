@@ -50,7 +50,7 @@ public:
             return;
         
 #if RUN_TEST_CODE
-        (*init_ptr)();
+//        (*init_ptr)();
 #endif
         
         start_ptr = (start_plugin_ptr)dlsym(handle, "startPlugin");
@@ -58,7 +58,7 @@ public:
             return ;
  
 #if RUN_TEST_CODE
-        (*start_ptr)();
+//        (*start_ptr)();
 #endif
         
         stop_ptr = (stop_plugin_ptr)dlsym(handle, "stopPlugin");
@@ -73,7 +73,7 @@ public:
         if(!send_ptr)
             return ;
 #if RUN_TEST_CODE
-        (*send_ptr)(1, NULL, 0, NULL, NULL);
+//        (*send_ptr)(1, NULL, 0, NULL, NULL);
 #endif
         
         get_pluginid = (get_plugin_id_ptr)dlsym(handle, "getPluginId");

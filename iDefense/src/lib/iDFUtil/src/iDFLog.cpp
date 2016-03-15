@@ -100,7 +100,8 @@ bool iDFLogContext::write(int level, char* format, char* data)
     sprintf(log, LOG_FORMAT, timer, pthread_self(), data);
     
     ::write(fd, log, strlen(log)+1);
-    
+    printf("hererhere");
+    fflush(stdout);
     fsync(fd);
     
     return true;

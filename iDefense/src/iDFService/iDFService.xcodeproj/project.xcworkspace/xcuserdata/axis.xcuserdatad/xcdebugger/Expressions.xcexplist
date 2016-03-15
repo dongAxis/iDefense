@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "idf::ipc::iDFIPC::send(int, void const*, int, void const*, int):iDFIPC.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "send_size">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "registerPlugin(char*, iDFPluginMgr&amp;):main.cpp">
       </ContextState>
       <ContextState
          contextName = "iDFServer::get_client_sock() const [inlined]:iDFServer.hpp">
@@ -40,6 +35,9 @@
          <PersistentStrings>
             <PersistentString
                value = "cmd">
+            </PersistentString>
+            <PersistentString
+               value = "(struct register_data*)out_data">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -96,6 +94,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "idf::ipc::iDFIPC::send(int, void const*, int, void const*, int):iDFIPC.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "send_size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "get_all_register_plugin(int, void*, unsigned long long, void**, unsigned long long*):namingServerCallback.cpp">
          <PersistentStrings>
             <PersistentString
@@ -110,9 +116,6 @@
                value = "errno">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "registerPlugin(char*, iDFPluginMgr&amp;):main.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

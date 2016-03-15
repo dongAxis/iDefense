@@ -40,4 +40,9 @@ struct task_percent
     char task_desc[128];
 };
 
+struct check_status
+{
+    PluginTypeID type;
+};
+
 #endif /* common_h */

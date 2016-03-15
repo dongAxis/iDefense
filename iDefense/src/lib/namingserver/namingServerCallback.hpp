@@ -25,5 +25,6 @@ IDF_ERRORCODE register_plugin_cb(int cmd, void* in_data, uint64_t in_len, void**
 IDF_ERRORCODE check_plugin_addr_cb(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len);
 IDF_ERRORCODE unregister_plugin_cb(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len);
 IDF_ERRORCODE get_all_register_plugin(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len);
+IDF_ERRORCODE check_plugin_status(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len);
 
 #endif /* namingServerCallback_hpp */

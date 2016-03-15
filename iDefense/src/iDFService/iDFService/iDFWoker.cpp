@@ -101,7 +101,7 @@ void iDFWorker::run()
             IDF_ERRORCODE error_code = IDF_SUCCESS;
             error_code = this->mgr->get_plugin(plugin_id, &plugin);
             
-            if(IDF_IS_ERROR(error_code) || !plugin->is_valid() || !plugin->is_run())
+            if(IDF_IS_ERROR(error_code) || !plugin || !plugin->is_valid() || !plugin->is_run())
             {
                 printf("the plugin dose not run or is invalid, plugin is is %d", plugin_id);
                 fflush(stdout);
@@ -110,18 +110,20 @@ void iDFWorker::run()
             }
             
             error_code = plugin->send_command(cmd, in_data, in_len, &out_data, &out_len);
-            if(IDF_IS_ERROR(error_code))
-            {
-                printf("there is an error when send the command to plugin");
-                fflush(stdout);
-                continue;
-            }
-            
-            if(out_data==NULL)
-            {
-                printf("there is no any data to send, quit now!");
-                continue;
-            }
+//            if(IDF_IS_ERROR(error_code))
+//            {
+//                printf("there is an error when send the command to plugin");
+//                fflush(stdout);
+//                continue;
+//            }
+            res.status = error_code;
+            res.cmd = cmd;
+//            
+//            if(out_data==NULL)
+//            {
+//                printf("there is no any data to send, quit now!");
+//                continue;
+//            }
             
 //            // test code
 //            out_data = new char[100];
@@ -131,6 +133,7 @@ void iDFWorker::run()
 //            
 //            out_len = strlen((char*)out_data);
 //            // test code
+            
             
             int ret=-1;
             if((ret = ipc->send(client_sock, &res, sizeof(res), out_data, out_len))<0)

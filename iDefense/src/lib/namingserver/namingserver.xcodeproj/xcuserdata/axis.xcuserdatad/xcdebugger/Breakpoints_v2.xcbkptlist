@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "get_all_register_plugin(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len)"
+            landmarkName = "check_plugin_status(int cmd, void* in_data, uint64_t in_len, void** out_data, uint64_t *out_len)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

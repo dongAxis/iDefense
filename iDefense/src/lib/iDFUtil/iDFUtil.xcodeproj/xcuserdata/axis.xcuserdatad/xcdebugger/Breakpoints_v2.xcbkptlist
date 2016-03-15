@@ -175,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
             endingLineNumber = "196"
-            landmarkName = "idf::ipc::iDFIPC::recv(int sock, void* header, int header_len, void** msg, int* msg_len)"
+            landmarkName = "idf::ipc::iDFIPC::send(int sock, const void* header, int header_len, const void* msg, int msg_len)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

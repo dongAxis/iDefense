@@ -46,8 +46,6 @@ bool registerPlugin(char *own_port, iDFPluginMgr& mgr)
         type_id.push_back(wrapper->get_plugin_id());
     }
     
-    printf("hereherherher\n");
-    
     if(type_id.empty()) return false;
     
     if(strcmp(own_port, NAMING_SERVER_PORT)==0)
@@ -65,7 +63,8 @@ bool registerPlugin(char *own_port, iDFPluginMgr& mgr)
                     bzero(data.node, sizeof(data.node));
                     strncpy(data.node, own_port, sizeof(data.node));
                     
-                    (*begin)->send_command(IDF_NAMINGSERVICE_REGISTER_PLUGIN, &data, sizeof(data), NULL, NULL);
+                    IDF_ERRORCODE error_code = (*begin)->send_command(IDF_NAMINGSERVICE_REGISTER_PLUGIN, &data, sizeof(data), NULL, NULL);
+                    printf("[nimei]%d", error_code);
                 }
                 
                 return true;
@@ -82,6 +81,9 @@ bool registerPlugin(char *own_port, iDFPluginMgr& mgr)
         
         idf::ipc::iDFIPC ipc;
         idf::ipc::RequestHeader header={};
+        idf::ipc::ResponseHeader res = {};
+        void *msg=NULL;
+        int msg_len = 0;
         
         header.cmd = IDF_NAMINGSERVICE_REGISTER_PLUGIN;
         
@@ -93,9 +95,26 @@ bool registerPlugin(char *own_port, iDFPluginMgr& mgr)
             
             int sock = ipc.connect(NAMING_SERVER_PORT);
             int code = ipc.send(sock, &header, sizeof(header), &data, sizeof(data));
+            if(code<0)
+            {
+                ipc.close(sock);
+                sleep(1);
+                continue;
+            }
+            code = ipc.recv(sock, &res, sizeof(res), &msg, &msg_len);
+            if(code<0)
+            {
+                ipc.close(sock);
+                sleep(1);
+                continue;
+            }
+            printf("[sock]%d", res.status);
+            
             sleep(1);
             printf("\n\n\ncode is %d\n\n\n", code);
             ipc.close(sock);
+            
+            if(res.status<0) return false;
         }
     }
     

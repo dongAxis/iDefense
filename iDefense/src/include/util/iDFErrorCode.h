@@ -9,7 +9,7 @@
 #ifndef iDFErrorCode_h
 #define iDFErrorCode_h
 
-typedef uint64_t IDF_ERRORCODE;
+typedef int IDF_ERRORCODE;
 
 #define IDF_IS_ERROR(x) ((x)<IDF_SUCCESS)
 
